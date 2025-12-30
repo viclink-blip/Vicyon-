@@ -1,0 +1,177 @@
+body {
+  background-color: #000;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard-container {
+  text-align: center;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.title-container span {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #e50914;
+  opacity: 0;
+}
+
+/* === Animation parts === */
+.left {
+  transform: translateX(-150%);
+  animation: slideLeft 2.2s ease-out forwards;
+}
+
+.right {
+  transform: translateX(150%);
+  animation: slideRight 2.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Hide user info initially */
+#user-info {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  opacity: 0;
+}
+.top-bar {
+    width: 100%;
+    height: 55px;
+    background: #000;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid red;
+}
+.user-name {
+    color: red;
+    font-size: 16px;
+    font-weight:500;
+}
+body {
+   padding-top: 70px;
+}
+
+/* Buttons */
+button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #b0060f;
+}
+
+/* ✨ Handwritten text under logo */
+.tagline {
+  font-family: "Dancing Script", "Great Vibes", cursive;
+  font-size: 1.5rem;
+  color: #a020f0; /* soft purple */
+  opacity: 0;
+  animation: fadeTagline 6s ease-in-out infinite;
+  margin-top: 10px;
+  text-shadow: 0 0 8px rgba(160, 32, 240, 0.6);
+}
+
+/* 💜 Fading animation for the tagline */
+@keyframes fadeTagline {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Animations */
+@keyframes slideLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hidden elements (JS toggles this) */
+.hidden {
+  display: none;
+}
+
+/* Main buttons default state */
+#main-buttons {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+#user-info {
+  opacity:0;
+  transition: opacity 1.1s ease-in-out;
+}
+.banner {
+  background-color: #0aff0a;
+  color: #000;
+  padding: 10px;
+  margin-bottom: 11px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  animation: glow 1.8s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px #00ff00; }
+  to { box-shadow: 0 0 14px #00ff00; }
+}
+.hidden {
+  display: none;
+}

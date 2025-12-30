@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicyon Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <style>
+    .hidden { display: none; }
+    button { margin: 5px; padding: 10px; cursor: pointer; }
+    .dashboard-container { text-align: center; padding: 20px; font-family: Arial, sans-serif; }
+    .title-container { font-size: 2rem; font-weight: bold; margin-bottom: 10px; }
+    .left { color: #007bff; }
+    .right { color: #ff6600; }
+    .tagline { font-style: italic; color: #800080; margin-bottom: 10px; }
+    .popup { border: 1px solid #ccc; background: #fff; padding: 15px; margin: 10px auto; width: 250px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+  </style>
+</head>
+
+<body>
+
+  <p id="debug" style="color: yellow; font-size: 14px;"></p>
+
+  <div class="dashboard-container">
+
+    <!-- Title -->
+    <div class="title-container">
+      <span class="left">Vic</span>
+      <span class="right">yon</span>
+    </div>
+
+    <p class="tagline">Never leave them offline</p>
+
+    <!-- User Info -->
+    <h2><span id="username"></span></h2>
+    <p id="user-id"></p>
+    <p id="requestMessage"></p>
+    <div id="connectionBanner" class="hidden banner"></div>
+
+    <!-- Main Buttons -->
+    <div id="main-buttons" class="hidden">
+      <button id="buyPlanBtn">Buy Plan</button>
+      <button id="logoutBtn">Logout</button>
+      <button id="sendRequestBtn">Send Request</button>
+      <button id="viewIncomingBtn">View Incoming Requests</button>
+    </div>
+
+    <!-- Popup: Send Request -->
+    <div id="connectionPopup" class="popup hidden">
+      <h3>Send Connection Request</h3>
+      <input type="text" id="receiverId" placeholder="Enter Friend's ID">
+      <button id="submitRequest">Send</button>
+      <p id="popupMessage"></p>
+      <button id="closePopup">Close</button>
+    </div>
+
+    <!-- Incoming Requests -->
+    <div id="incoming-requests-section" class="hidden">
+      <h3>incomings</h3>
+      <div id="incoming-requests"></div>
+    </div>
+
+    <!-- Plan Options -->
+    <div id="planOptions" class="hidden">
+      <h3>Select a Plan</h3>
+      <button class="plan-btn" data-plan="personal">Personal - 400</button>
+      <button class="plan-btn" data-plan="friends">Friends - 700</button>
+      <button id="backBtn">Back</button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <!-- Sound -->
+  <audio id="vicyonSound" src="assets/Soft-startup-sound-269291.mp3"></audio>
+
+  <!-- JS -->
+  <script src="dashboard.js?v=22"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sound = document.getElementById("vicyonSound");
+      const rightPart = document.querySelector(".right");
+
+      rightPart.addEventListener("animationend", () => {
+        sound.play().catch(() => console.log("Sound blocked"));
+      });
+    });
+  </script>
+
+</body>
+</html>

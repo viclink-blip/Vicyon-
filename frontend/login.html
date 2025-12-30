@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicyon Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    #message {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .error, .success {
+      color: yellow;
+    }
+    .extra-links {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .extra-links a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .extra-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="assets/Vicyon.png" alt="Vicyon Logo" class="logo" style="width:80px; margin-bottom:10px;">
+    <h2>Login to Vicyon</h2>
+
+    <form id="loginForm">
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Email" required>
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="extra-links">
+      <a href="forgot_password.html"><i class="fas fa-key"></i> Forgot Password?</a>
+      <a href="signup.html"><i class="fas fa-user-plus"></i> Create Account</a>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

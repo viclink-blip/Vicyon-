@@ -1,0 +1,81 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.signup-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+}
+
+.signup-form button {
+  padding: 12px;
+  background: #ffb300;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.signup-form button:hover {
+  background: #0000cd;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.footer-text {
+  margin-top: 15px;
+  color: #ddd;
+}
+
+.footer-text a {
+  color: #ffeb3b;
+  text-decoration: none;
+}

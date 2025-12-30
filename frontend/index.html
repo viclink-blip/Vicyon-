@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vicyon</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #f0f6ff, #e8f0ff);
+      text-align: center;
+      padding: 40px;
+      color: #001f4d;
+    }
+
+    .logo-container img {
+      width: 120px;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-top: 10px;
+      color: #005fcc;
+    }
+
+    p {
+      margin-top: 10px;
+      color: #003366;
+      font-size: 1rem;
+    }
+
+    .btn-container {
+      margin-top: 30px;
+    }
+
+    button {
+      background-color: #0078ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #005fcc;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header section with animated logo -->
+  <header class="logo-container">
+    <img src="assets/Vicyon.png" alt="Vicyon Logo" class="logo" />
+    <h1>Welcome to Vicyon</h1>
+    <p>Vicyon allows a friend without internet to stay connected using a friend’s internet — securely, anywhere in the world 🌍</p>
+  </header>
+
+  <!-- Main buttons -->
+  <div class="btn-container">
+    <button onclick="window.location.href='login.html'">Login</button>
+    <button onclick="window.location.href='signup.html'">Create Account</button>
+  </div>
+
+  <!-- Optional logout (only shows if logged in) -->
+  <div class="btn-container"</div>
+  </div>
+
+  </script>
+</body>
+</html>
+<script>
+fetch("http://127.0.0.1:5000/session", { credentials: "include" })
+  .then(res => res.json())
+  .then(data => {
+    if (data.logged_in) {
+      // ✅ User is logged in — redirect to dashboard
+      window.location.href = "dashboard.html";
+    } else {
+      console.log("User not logged in, stay on home page.");
+    }
+  })
+  .catch(err => console.error("Error checking session:", err));
+</script>
