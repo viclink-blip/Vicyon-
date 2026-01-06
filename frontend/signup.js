@@ -8,7 +8,7 @@ document.getElementById("signupForm").addEventListener("submit", async function(
   };
 
   try {
-    const response = await fetch("http://vicyon.onrender.com/signup", {
+    const response = await fetch("https://vicyon.onrender.com/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
