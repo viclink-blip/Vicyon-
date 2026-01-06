@@ -567,8 +567,8 @@ def get_session():
         "username": user.username,
         "user_id": user.user_id
     }), 200
-@app.route("/Viclink")
-def Viclink():
+@app.route("/")
+def home():
    return jsonify({"message": "welcome to viclink"})
 if __name__ == "__main__":
    with app.app_context():
@@ -580,5 +580,5 @@ if __name__ == "__main__":
        db.session.add_all([personal, friends])
        db.session.commit()
        print("plans added succefuly!")
-   app.run(debug=True, host="0.0.0.0", port=5000)
+   app.run(host="0.0.0.0", port=5000)
 
