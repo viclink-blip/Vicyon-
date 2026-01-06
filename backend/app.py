@@ -567,9 +567,9 @@ def get_session():
         "username": user.username,
         "user_id": user.user_id
     }), 200
-@app.route("/")
-def home():
-   return jsonify({"message": "welcome to viclink"})
+@app.route("/vicyon")
+def vicyon():
+   return jsonify({"message": "welcome to vicyon"})
 if __name__ == "__main__":
    with app.app_context():
      db.drop_all()
