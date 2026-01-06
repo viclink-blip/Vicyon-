@@ -127,13 +127,16 @@ def whoami():
         "user_id": user.user_id,
         "username": user.username
     }), 200
-@app.route("/signup", methods=["POST"])
+@app.route("/signup", methods=["GET", "POST"])
 def signup():
     data = request.get_json()
     username = data.get("username")
     email = data.get("email")
     password = data.get("password")
-
+    if not password or len(password) <7:
+        return jsonify({
+            "error": "password must be at least 7 characters"
+        })
     if not username or not email or not password:
         return jsonify({"error": "Username, email, and password required"}), 400
 
