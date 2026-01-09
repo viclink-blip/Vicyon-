@@ -20,6 +20,7 @@ from engine import start_engine, get_engine, is_engine_active, engine
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "viclink.db")
 app = Flask(__name__, static_folder="frontend/assets", static_url_path="/assets")
+CORS(app, resources={r"/*": {"origins": "*"}})
 plans = {}
 users = {}
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
