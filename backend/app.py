@@ -129,7 +129,7 @@ def whoami():
     }), 200
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
-    data = request.get_json(force=True) or {}
+    data = request.get_json()
     username = data.get("username")
     email = data.get("email")
     password = data.get("password")
