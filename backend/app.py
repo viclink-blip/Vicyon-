@@ -575,7 +575,6 @@ def vicyon():
    return jsonify({"message": "welcome to vicyon"})
 if __name__ == "__main__":
    with app.app_context():
-     db.drop_all()
      db.create_all()
      if not Plan.query.first():
        personal = Plan(name="personal",price=400, max_receivers=1)
