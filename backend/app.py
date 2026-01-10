@@ -20,12 +20,11 @@ from engine import start_engine, get_engine, is_engine_active, engine
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "viclink.db")
 app = Flask(__name__, static_folder="frontend/assets", static_url_path="/assets")
-CORS(app, resources={r"/*": {"origins": "*"}})
 plans = {}
 users = {}
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
-jwt = JWTManager(app)
-CORS(app, supports_credentials=True, origins=["http://127.0.0.1:8888", "http://localhost:8888"])
+jwt_manager = JWTManager(app)
+CORS(app, supports_credentials=True, origins=["*"])
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///viclink.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.secret_key = "supersecretkey"
